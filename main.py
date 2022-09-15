@@ -1,18 +1,25 @@
 # bus route is mainly have 2 function . 
 # according to time and input this function will output  route for this 
 #according to time  route will be delevered 
-#find route for that 
-lis1=['AIRPORT','ULTADANGA','SCIENCE CITY','PARK CIRCUS','RABINDRA SADAN','ESPLANADE']
-lis2=['Alam Bazar','Baranagar Bazar','SCIENCE CITY','Bibir Bazar','Cossipur','Bagbazar']
+# #find route for that 
+# lis1=['AIRPORT','ULTADANGA','SCIENCE CITY','PARK CIRCUS','RABINDRA SADAN','ESPLANADE']
+# lis2=['Alam Bazar','Baranagar Bazar','SCIENCE CITY','Bibir Bazar','Cossipur','Bagbazar']
 
 # intersect_lis=[x for x in lis1 if x in lis2]
 
 # print(intersect_lis)
 
 
+
+
+
+lis1=['a','b','d','e']
+lis2=['b','g','c','h','i']
+lis3=['x','y','c','m','l']
+
 #this function will decide in which function it will go for whether it is simple_route or 
 # diff_route for further process .
-def decider(sou,des,lis1,lis2):
+def decider(sou:str,des:str,lis1,lis2):
     if sou in lis1 and des in lis1:
         simple_route(sou, des, lis1, lis2)
     elif sou in lis2 and des in lis2:
@@ -28,16 +35,14 @@ def decider(sou,des,lis1,lis2):
 
 #this function is used when source and des are in same  bus route
 def simple_route(sou,des,lis1,lis2):
-    try:
-        if sou in lis1:
-            return (lis1[lis1.index(sou):lis1.index(des)+1])
-        elif sou in lis2:
-            return(lis2[lis2.index(sou):lis2.index(des)+1])   
-        else:
-            print('something else')
-            
-    except ValueError:
+    if sou in lis1 and des in lis1:
+        print (lis1[lis1.index(sou):lis1.index(des)+1])
+    elif sou in lis2 and des in lis2:
+        print(lis2[lis2.index(sou):lis2.index(des)+1])   
+    else:
         print('something else')
+            
+
         
             
 #this function is used when source and des are not in the same bus route        
@@ -53,13 +58,10 @@ def diff_route(sou,des,lis1,lis2):
         return None
     
     
-
-# da=diff_route("AIRPORT",'Bagbazar',lis1,lis2)
-
-# da=(diff_route("Bagbazar", "AIRPORT-1",lis1,lis2))
-
-# da=simple_route('Baranagar Bazar', "Bagbazar",lis1,lis2)    
-# print(decider("Baranagar Bazar","Bagbazar", lis1, lis2))
+    
+    
+if __name__=="__main__":
+    decider('b','i',lis1,lis2)
 
 
-# print(da)
+
