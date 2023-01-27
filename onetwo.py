@@ -61,7 +61,7 @@ def diff_route(sou,des,lis1,lis2):
     
     
 if __name__=="__main__":
-    decider('b','i',lis1,lis2)
+    decider('b','m',lis2,lis3)
 
 
 
